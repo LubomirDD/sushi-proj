@@ -29,8 +29,17 @@ window.addEventListener('click', function (event) {
 
         if (parseInt(counter.innerText) > 1) {
         // Изменяем текст в счетчике уменьшая его на 1
-        counter.innerText = --counter.innerText;
-    }
+            counter.innerText = --counter.innerText;
+            //  Проверка на товар, который находится в корзине
+        } else if(event.target.closest('.cart-wrapper') && parseInt(counter.innerText) === 1 ) {
+            // console.log('penis dushylin');
+            // Удаляем
+            event.target.closest('.cart-item').remove();
+            toggleCartStatus();
+
+        }
+        
+        
         
     }
 });

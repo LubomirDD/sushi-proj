@@ -30,12 +30,12 @@ window.addEventListener('click', function (event) {
             counter: card.querySelector('[data-counter]').innerText,
 
         }
-        console.log(productInfo);
+        // console.log(productInfo);
 
 
         // Проверяем, есть ли такой товар уже в корзине
         const itemInCart = cartWrapper.querySelector(`[data-id= "${productInfo.id}"]`);
-        console.log(itemInCart);
+        // console.log(itemInCart);
 
 
         // Если товар есть в корзине
@@ -78,10 +78,15 @@ window.addEventListener('click', function (event) {
         // Отобразим товар в корзине
         cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
 
+            
         }
 
-        
 
+        // Сбрасываем счетчик добавленного товара на "1"
+        card.querySelector('[data-counter]').innerText = '1';
+
+        // Отображение статуса корзины Пустая/Полная 
+        toggleCartStatus();
     }
 
 

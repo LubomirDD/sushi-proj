@@ -11,8 +11,8 @@ function toggleCartStatus() {
         orderForm.classList.remove('none')
     } else {
         console.log('Empty');
-        cartEmptyBadge.classList.remove('none')
-                orderForm.classList.add('none')
+        cartEmptyBadge.classList.remove('none');
+        orderForm.classList.add('none');
 
 
     }

@@ -35,11 +35,22 @@ window.addEventListener('click', function (event) {
             // console.log('penis dushylin');
             // Удаляем
             event.target.closest('.cart-item').remove();
+
+            //  Отображение сиатуса корзины Пустая/Полная
             toggleCartStatus();
+
+            // Пересчет общей стоимости товаров в корзине
+            calcCartPriceAndDelivery();
 
         }
         
         
         
+    }
+
+    // Проверяем клик на + или - внутри корзины
+    if (event.target.hasAttribute('data-action') && event.target.closest('.cart-wrapper')) {
+
+        calcCartPriceAndDelivery();
     }
 });
